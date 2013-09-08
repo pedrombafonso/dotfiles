@@ -1,0 +1,5 @@
+[user]
+	name = pedrombafonso
+	email = mail@pedroafonso.net
+[core]
+	excludesfile = /Users/pedroafonso/.gitignore_global

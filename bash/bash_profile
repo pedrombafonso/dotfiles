@@ -1,0 +1,3 @@
+# tell ls to be colourful
+export CLICOLOR=1
+
