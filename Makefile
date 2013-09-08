@@ -17,12 +17,12 @@ sublime:
 	cp ~/Library/'Application Support'/'Sublime Text 2'/Packages/User/Preferences.sublime-settings ~/Library/'Application Support'/'Sublime Text 2'/Packages/User/Preferences.sublime-settings.bak
 	rm -rf ~/Library/'Application Support'/'Sublime Text 2'/Packages/User/Preferences.sublime-settings
 	ln -s ~/.dotfiles/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
-  # Installed packages
-  cp ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages' ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages.bak'
-  rm -rf ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages'
-  ln -s ~/.dotfiles/sublime/'Installed Packages'/ ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages'
-  # Solarized color scheme
-  ln -s ~/.dotfiles/sublime/'Solarized (dark).tmTheme' ~/Library/'Application Support'/'Sublime Text 2'/Packages/'Color Scheme - Default'/'Solarized (dark).tmTheme'
+	# Installed packages
+	cp ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages' ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages.bak'
+	rm -rf ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages'
+	ln -s ~/.dotfiles/sublime/'Installed Packages'/ ~/Library/'Application Support'/'Sublime Text 2'/'Installed Packages'
+	# Solarized color scheme
+	ln -s ~/.dotfiles/sublime/'Solarized (dark).tmTheme' ~/Library/'Application Support'/'Sublime Text 2'/Packages/'Color Scheme - Default'/'Solarized (dark).tmTheme'
 
 
 clean:
