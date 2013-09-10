@@ -1,5 +1,7 @@
 [user]
 	name = pedrombafonso
-	email = mailpedroafonso.net
+	email = mail@pedroafonso.net
 [core]
 	excludesfile = /Users/pedroafonso/.gitignore_global
+[credential]
+	helper = osxkeychain

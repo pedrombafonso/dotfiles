@@ -1,3 +1,19 @@
 # tell ls to be colourful
 export CLICOLOR=1
 
+#
+# Aliases
+#
+
+# CrowdProcess Projects
+alias _cpp='cd ~/dev/crowdprocess/projects'
+# CrowdProcess Sandbox
+alias _cps='cd ~/dev/crowdprocess/sandbox'
+
+# cd git root
+alias _groot='cd "$(git rev-parse --show-toplevel)"'
+
+# nvm
+[[ -s /Users/pedroafonso/.nvm/nvm.sh ]] && . /Users/pedroafonso/.nvm/nvm.sh # This loads NVM
+
+nvm use latest
