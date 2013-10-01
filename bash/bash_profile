@@ -13,7 +13,30 @@ alias _cps='cd ~/dev/crowdprocess/sandbox'
 # cd git root
 alias _groot='cd "$(git rev-parse --show-toplevel)"'
 
+#
+# NodeJS
+#
+
 # nvm
 [[ -s /Users/pedroafonso/.nvm/nvm.sh ]] && . /Users/pedroafonso/.nvm/nvm.sh # This loads NVM
-
 nvm use latest
+
+#
+# Shell
+#
+
+# Prompt
+export NO_COLOR="\[\e[0m\]"
+export LIGHT_GREEN="\[\033[0;91m\]"
+export CYAN="\[\033[0;36m\]"
+export PS1="$CYAN\W$NO_COLOR \$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/[$LIGHT_GREEN\1$NO_COLOR]/') • "
+
+
+##
+# Your previous /Users/pedroafonso/.bash_profile file was backed up as /Users/pedroafonso/.bash_profile.macports-saved_2013-09-20_at_15:36:05
+##
+
+# MacPorts Installer addition on 2013-09-20_at_15:36:05: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
