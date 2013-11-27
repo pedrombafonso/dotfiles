@@ -7,3 +7,5 @@
 	helper = osxkeychain
 [color]
 	ui = true
+[push]
+	default = matching
