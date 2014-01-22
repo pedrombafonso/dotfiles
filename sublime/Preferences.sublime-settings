@@ -83,7 +83,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 14.0,
+	"font_size": 15.0,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
@@ -91,7 +91,8 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"Solarized Color Scheme"
 	],
 	"indent_guide_options":
 	[

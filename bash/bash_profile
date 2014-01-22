@@ -6,9 +6,9 @@ export CLICOLOR=1
 #
 
 # CrowdProcess Projects
-alias _cpp='cd ~/dev/crowdprocess/projects'
+alias _cpp='cd ~/dev/crowdprocess/prj'
 # CrowdProcess Sandbox
-alias _cps='cd ~/dev/crowdprocess/sandbox'
+alias _cps='cd ~/dev/crowdprocess/prj-sandbox'
 
 # cd git root
 alias _groot='cd "$(git rev-parse --show-toplevel)"'
