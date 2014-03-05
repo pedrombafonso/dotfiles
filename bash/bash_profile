@@ -37,7 +37,6 @@ export PS1="$CYAN\W$NO_COLOR \$(git branch 2> /dev/null | grep -e '\* ' | sed 's
 #
 # PATH
 #
-PATH=/Users/pedroafonso/utils/emsdk_portable:/Users/pedroafonso/utils/emsdk_portable/clang/3.2_64bit/bin:/Users/pedroafonso/utils/emsdk_portable/node/0.10.18_64bit/bin:/Users/pedroafonso/utils/emsdk_portable/emscripten/1.5.6:$PATH
 
 ##
 # Your previous /Users/pedroafonso/.bash_profile file was backed up as /Users/pedroafonso/.bash_profile.macports-saved_2013-09-20_at_15:36:05
