@@ -21,7 +21,7 @@ alias l='ls'
 #
 
 # nvm
-[[ -s /Users/pedroafonso/.nvm/nvm.sh ]] && . /Users/pedroafonso/.nvm/nvm.sh # This loads NVM
+[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh # This loads NVM
 nvm use latest
 
 #
