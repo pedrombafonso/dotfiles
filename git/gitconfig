@@ -2,10 +2,21 @@
 	name = pedrombafonso
 	email = mail@pedroafonso.net
 [core]
-	excludesfile = /Users/pedroafonso/.gitignore_global
+	excludesfile = /Users/pedrombafonso/.gitignore_global
+	editor = atom --wait
 [credential]
 	helper = osxkeychain
 [color]
 	ui = true
 [push]
 	default = simple
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[submodule "api-boilerplate-node"]
+	ignore = all
+[submodule "ui-pim"]
+	ignore = all
+[submodule "service-product-data"]
+	ignore = all

@@ -1,0 +1,1 @@
+/Users/pedrombafonso/.dotfiles/bash/bash_profile

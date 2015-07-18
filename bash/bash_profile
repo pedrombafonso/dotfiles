@@ -19,6 +19,8 @@ alias ll='ls -lah'
 alias l='ls'
 # pwd output to clipboard
 alias pwdcopy='pwd | pbcopy'
+# shared key output to clipboard
+alias pkcopy='pbcopy < ~/.ssh/id_rsa.pub'
 
 #
 # NodeJS
@@ -56,7 +58,7 @@ export PATH=${PATH}:~/dev/tools/adt-bundle/sdk/platform-tools:~/dev/tools/adt-bu
 #
 # SCM BREEZE
 #
-[[ -s /Users/pedroafonso/.scm_breeze/scm_breeze.sh ]] && source /Users/pedroafonso/.scm_breeze/scm_breeze.sh
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -71,3 +73,97 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # TMUXINATOR
 #
 export EDITOR="atom"
+[[ -s "/Users/pedrombafonso/.gvm/scripts/gvm" ]] && source "/Users/pedrombafonso/.gvm/scripts/gvm"
+
+#
+# Visual Sutdio Code
+#
+code () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
+
+#
+# Docker Settings
+#
+DOCKER_OPTS="-H unix:///var/run/docker.sock"
+if [ -f ~/.boot2dockercfg ]; then
+    source ~/.boot2dockercfg
+fi
+
+# ------------------------------------
+# Docker alias and function
+# ------------------------------------
+
+# Get latest container ID
+alias dl="docker ps -l -q"
+
+# Get container process
+alias dps="docker ps"
+
+# Get process included stop container
+alias dpa="docker ps -a"
+
+# Get images
+alias di="docker images"
+
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="docker run -i -t -P"
+
+# Stop all containers
+dstop() { docker stop $(docker ps -a -q); }
+
+# Remove all containers
+drm() { docker rm $(docker ps -a -q); }
+
+# Stop and Remove all containers
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Remove all images
+dri () { docker rmi $(docker images -q); }
+
+# Dockerfile build, e.g., $dbu tcnksm/test
+dbu () { docker build -t=$1 .; }
+
+# Show all alias related docker
+dalias () { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# Docker Aliases
+# Kill all running containers.
+alias dockerkillall='docker kill $(docker ps -q)'
+
+# Delete all stopped containers.
+alias dockercleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+
+# Delete all untagged images.
+alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+
+# Delete all stopped containers and untagged images.
+alias dockerclean='dockercleanc || true && dockercleani'
+
+# Enter into a running container
+din () { docker exec -i -t $1 /bin/bash; }
+
+# Run bash for any image
+dbash () { docker run --rm -i -t -e TERM=xterm --entrypoint /bin/bash $1; }
+
+# DOCKER COMPOSE
+alias dcup='docker-compose up -d; docker-compose logs'
+alias dcdown='docker-compose stop; dockerclean'
+
+
+#
+# RabbitMQ
+#
+PATH=$PATH:/usr/local/sbin
